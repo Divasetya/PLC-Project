@@ -1,0 +1,73 @@
+.header {
+  background-color: #ffffff;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #00065c;
+}
+
+.welcome-message {
+  color: #e53935;
+  font-size: 17px;
+  font-weight: bold;  
+}
+.welcome-message span {
+  color: #1e88e5;
+  font-weight: bold;
+}
+
+.welcome-message p {
+  margin: 2px;
+  font-size: 12px;
+  color: rgb(0, 0, 0);
+  font-weight: normal;
+}
+
+.search-bar {
+  margin-left: 4rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 480px; /* Lebar tetap 500px */
+  justify-content: flex-end /* Memposisikan konten di sebelah kanan */
+}
+
+
+
+.search-bar input {
+  padding: 10px 20px 10px 12px;
+  width: 100%;
+  background: linear-gradient(to right, #001357 0%, #005fbd 100%);
+  transition: all 0.3s ease-in-out;
+  font-size: 14px;
+}
+
+.search-bar input:focus {
+  outline: none;
+  color: white;
+  text: 2px 2px 4px #ffffff;
+
+}
+
+.search-bar .icon {
+  position: absolute;
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.notification{
+    font-size: 15px;
+    margin-right: 27rem;
+    margin-top: -0.7rem;
+}
+.notifButton{
+    background-color: #3086F3;
+    border: none;
+    padding: 0.6rem 0.8rem;
+    border-radius: 50%;
+    margin-top: 0.4rem;
+}
+.profile{
+  color: #000000;
+  font-size: 40px;
+}
