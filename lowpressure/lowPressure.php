@@ -38,18 +38,18 @@
                 <span class="hide-menu poppins-semibold" style="font-size: 13px; color: white">General</span>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link d-flex justify-content-center" href="dashboard.php" aria-expanded="false" style="background-color: #DEDEDE; border-radius: 10px; padding: 0.4rem 0rem; margin-bottom: 0.5rem;">
-                  <div style="background-color: #0A2647; margin: 0rem; padding: 0.2rem 0.5rem; display: flex; align-item: center; border-radius: 10px">
-                    <iconify-icon icon="hugeicons:home-04" style="color: white; font-size: 23px; margin-right: 0.7rem;"></iconify-icon>
-                    <span class="hide-menu" style="font-size: 16px; color: white">Dashboard</span>
-                    <iconify-icon icon="oui:arrow-right" style="color: white; font-size: 20px; margin-left: 3.2rem; margin-right: -0.3rem"></iconify-icon>
+                <a class="sidebar-link d-flex justify-content-center" href="../dashboard/dashboard.php" aria-expanded="false" style="background-color: #DEDEDE; box-shadow: 0px 3px 3px 1px gray inset; border-radius: 10px; padding: 0.4rem 0rem; margin-bottom: 0.5rem;">
+                  <div style="margin: 0rem; padding: 0.2rem 0.5rem; display: flex; align-item: center; border-radius: 10px">
+                    <iconify-icon icon="hugeicons:home-04" style="color: #0A2647; font-size: 23px; margin-right: 0.7rem;"></iconify-icon>
+                    <span class="hide-menu" style="font-size: 16px; color: #0A2647">Dashboard</span>
+                    <iconify-icon icon="oui:arrow-right" style="color: #0A2647; font-size: 20px; margin-left: 3.2rem; margin-right: -0.3rem"></iconify-icon>
                   </div>
                 </a>
-                <a class="sidebar-link d-flex justify-content-center" href="../lowpressure/lowPressure.php" aria-expanded="false" style="background-color: #DEDEDE; box-shadow: 0px 3px 3px 1px gray inset; border-radius: 10px; padding: 0.4rem 0rem; margin-bottom: 0.5rem;">
-                  <div style="margin: 0rem; padding: 0.2rem 0.5rem; display: flex; align-item: center; border-radius: 10px">
-                    <iconify-icon icon="ant-design:dashboard-outlined" style="color: #0A2647; font-size: 23px; margin-right: 0.7rem; transform: scaleX(-1);"></iconify-icon>
-                    <span class="hide-menu poppins-regular" style="font-size: 16px; color: #0A2647">Low Pressure</span>
-                    <iconify-icon icon="oui:arrow-right" style="color: #0A2647; font-size: 20px; margin-left: 2.3rem; margin-right: -0.3rem"></iconify-icon>
+                <a class="sidebar-link d-flex justify-content-center" href="lowPressure.php" aria-expanded="false" style="background-color: #DEDEDE; border-radius: 10px; padding: 0.4rem 0rem; margin-bottom: 0.5rem;">
+                  <div style="background-color: #0A2647; margin: 0rem; padding: 0.2rem 0.5rem; display: flex; align-item: center; border-radius: 10px">
+                    <iconify-icon icon="ant-design:dashboard-outlined" style="color: white; font-size: 23px; margin-right: 0.7rem; transform: scaleX(-1);"></iconify-icon>
+                    <span class="hide-menu poppins-regular" style="font-size: 16px; color: white">Low Pressure</span>
+                    <iconify-icon icon="oui:arrow-right" style="color: white; font-size: 20px; margin-left: 2.3rem; margin-right: -0.3rem"></iconify-icon>
                   </div>
                 </a>
                 <a class="sidebar-link d-flex justify-content-center" href="../highpressure/highPressure.php" aria-expanded="false" style="background-color: #DEDEDE; box-shadow: 0px 3px 3px 1px gray inset; border-radius: 10px; padding: 0.4rem 0rem">
@@ -170,11 +170,6 @@
             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #0555b3; color: white; border-radius: 4px; width: 11rem">11 - 17 Sept 2024</button>
             <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent; color: white; border-radius: 4px; border-color: #0555b3; width: 11rem">
               <i class="bi bi-file-pdf me-2"></i>Export Report
-            </button>
-          </div>
-          <div class="col d-flex justify-content-end">
-            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent; color: white; border-radius: 4px; border-color: #0555b3; width: 11rem">
-              Low Pressure
             </button>
           </div>
         </div>
