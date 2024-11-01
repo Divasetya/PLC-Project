@@ -23,7 +23,7 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Bayangan diperbesar */
     position: relative;
     overflow: hidden;
-    width: 1000px; /* Lebar diperbesar */
+    width: 950px; /* Lebar diperbesar */
     max-width: 100%;
     min-height: 600px; /* Tinggi diperbesar */
 }
