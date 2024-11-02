@@ -13,25 +13,53 @@
 <body>
 
     <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form>
-                <h1>Create Account</h1>
+        <<div class="form-container sign-up">
+            <form onsubmit="return validateForm()">
+                <h2>Create Account</h2>
                 <span>or use your Name, NPK, Company Email, Phone Number & password</span><br>
-                <label style="margin-left: 1rem; width : 26rem">Name<input type="text" placeholder="Name" required></label>
-                <label style="margin-left: 1rem; width : 26rem">NPK<input type="text" placeholder="NPK" required></label>
-                <label style="margin-left: 1rem; width : 26rem">NPK<input type="text" placeholder="Email Perusahaan" required></label>
-                <label style="margin-left: 1rem; width : 26rem">Password<input type="password" placeholder="Password" required></label>
-                <label style="margin-left: 1rem; width : 26rem">Confirm Password<input type="password" placeholder="Confirm Password" required></label>
+                <label style="margin-left: 1rem; width: 85%;">Name
+                    <input type="text" placeholder="Name" required>
+                </label>
+                <label style="margin-left: 1rem; width: 85%;">NPK
+                    <input type="text" placeholder="NPK" required>
+                </label>
+                <label style="margin-left: 1rem; width: 85%;">Company Email
+                    <input type="email" placeholder="Email Perusahaan" required>
+                </label>
+                <label style="margin-left: 1rem; width: 85%;">Password
+                    <input type="password" id="password" placeholder="Password" required>
+                </label>
+                <label style="margin-left: 1rem; width: 85%;">Confirm Password
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                </label>
                 <button type="submit">Sign Up</button>
+                <p id="error-message" style="color: red; display: none;">Passwords do not match!</p>
             </form>
         </div>
+        
+        <script>
+            function validateForm() {
+                const password = document.getElementById("password").value;
+                const confirmPassword = document.getElementById("confirmPassword").value;
+                const errorMessage = document.getElementById("error-message");
+        
+                if (password !== confirmPassword) {
+                    errorMessage.style.display = "block";
+                    return false; // Prevent form submission
+                } else {
+                    errorMessage.style.display = "none";
+                    return true; // Allow form submission
+                }
+            }
+        </script>
+        
         <div class="form-container sign-in">
             <form>
-                <h1>Sign In</h1>
+                <h2>Sign In</h2>
                 <span>or use your Name, NPK & password</span>
-                <label style="margin-left: 1rem; width : 26rem">Name<input type="text" placeholder="Name" required></label>
-                <label style="margin-left: 1rem; width : 26rem">NPK<input type="text" placeholder="NPK" required></label>
-                <label style="margin-left: 1rem; width : 26rem">Password<input type="password" placeholder="Password" required></label>
+                <label style="margin-left: 1rem; width: 85%;">Name<input type="text" placeholder="Name" required></label>
+                <label style="margin-left: 1rem; width: 85%;">NPK<input type="text" placeholder="NPK" required></label>
+                <label style="margin-left: 1rem; width: 85%;">Password<input type="password" placeholder="Password" required></label>
                 <a href="#">Forget Your Password?</a>
                 <button type="submit">Sign In</button>
             </form>
@@ -39,25 +67,29 @@
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
-                    <div class="card" style="padding: 4rem 2rem; background-color: transparent; border-color: white; border-radius: 50px; width: 32.8rem; height: 28rem">
+                    <div class="card" style="padding: 4rem 2rem; background-color: transparent; border-color: white; border-radius: 48px; border-width: 2px; width: 88%; height: 28rem;">
                         <div class="card-body">
                             <div class="d-flex justify-content-end">
                                 <h1 style="color: white;">Welcome Back!</h1>
                             </div>
-                            <div class="d-flex justify-content-end" style="margin-bottom: 0rem">
-                            <p>Enter your personal details to use all of site features</p>
-                             </div> 
-                             <div class="d-flex justify-content-end"> 
+                            <div class="d-flex justify-content-end" style="margin-bottom: -2rem">
+                                <p style="color: white;">Please create an account to be able</p>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <p style="color: white;">to access this website</p>
+                            </div>
+
+                            <div class="d-flex justify-content-end"> 
                                 <button class="hidden" id="login">Sign In</button>
                             </div>
                         </div>
                     </div>
-                    <img style="width: 28.8rem; position: absolute; top: 12.9rem; left:-0rem" src="Welcome.png">
+                    <img style="width: 100%; max-width: 28.8rem; position: absolute; top: 12.9rem; left: 0" src="Welcome.png">
                     <img style="width: 5rem; position: absolute; top: 28rem; left: 34rem; border-radius: 50%" src="Logo daihatsu.png">
                 </div>
                 
                 <div class="toggle-panel toggle-right">
-                    <div class="card" style="padding: 4rem 2rem; background-color: transparent; border-color: white; border-radius: 50px; width: 35rem; height: 27rem">
+                    <div class="card" style="padding: 4rem 2rem; background-color: transparent; border-color: white; border-radius: 48px; border-width: 2px; width: 88%; height: 28rem">
                         <div class="card-body">
                             <div class="d-flex justify-content-start">
                                 <h2 style="color: white;">Hello, Insan Astra!</h2>     
@@ -73,8 +105,8 @@
                             </div>
                         </div>
                     </div>
-                    <img style="width: 21rem; position: absolute; top: 9.6rem; left: 21rem" src="Login.png">
-                    <img style="width: 5rem; position: absolute; top: 28rem; left: 1rem; border-radius: 50%" src="Logo daihatsu.png">
+                    <img style="width: 100%; max-width: 21rem; position: absolute; top: 10.1rem; left: 20rem" src="Login.png">
+                    <img style="width: 5rem; position: absolute; top: 28rem; left: 2rem; border-radius: 50%" src="Logo daihatsu.png">
                 </div>
             </div>
         </div>
