@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header with Notification</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Tautan ke file CSS terpisah -->
+</head>
+<body>
+
+    <div class="header">
+        <div class="welcome-message">
+            Welcome Back, <span>Edward</span>
+            <p>Here are your daily updates.</p>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <span class="material-icons icon">search</span>
+        </div>
+        <div class="notification">
+            <span class="material-icons" onclick="toggleDropdown()">notifications</span>
+            <span class="badge">3</span>
+            <div class="dropdown" id="notificationDropdown">
+                <p>You have a new message</p>
+                <p>System update available</p>
+                <p>Reminder: Meeting at 3 PM</p>
+            </div>
+        </div>
+        <div class="profile">
+            <img src="https://via.placeholder.com/45" alt="Profile Picture">
+            <div>
+                <div class="profile-name">Edward Lore</div>
+                <div class="role">Production Manager</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById('notificationDropdown');
+            dropdown.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

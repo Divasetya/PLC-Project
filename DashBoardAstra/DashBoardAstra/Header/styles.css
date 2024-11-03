@@ -1,0 +1,88 @@
+.header {
+  background-color: #ffffff;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #00065c;
+}
+
+.welcome-message {
+  color: #e53935;
+  font-size: 17px;
+  font-weight: bold;
+  position: relative;
+  padding: 0 5px;
+  display: inline-block;
+}
+
+.welcome-message span {
+  color: #1e88e5;
+  font-weight: bold;
+}
+
+.welcome-message p {
+  margin: 2px;
+  font-size: 12px;
+  color: rgb(0, 0, 0);
+  font-weight: normal;
+}
+
+.notification {
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.notifButton {
+  background-color: #3086f3; /* Button color */
+  border: none; /* No border */
+  border-radius: 50%; /* Circular button */
+  width: 40px; /* Fixed width */
+  height: 40px; /* Fixed height */
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center icon vertically */
+  justify-content: center; /* Center icon horizontally */
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+.profile {
+  color: #000000;
+  font-size: 40px;
+}
+
+.user {
+  position: relative; /* Position relative for dropdown */
+}
+
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute; /* Positioning for dropdown */
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it's on top */
+  width: 200px; /* Set a width for the dropdown */
+  cursor: pointer;
+  left: 50%; /* Position from the left */
+  transform: translateX(-50%); /* Center it by translating half of its width */
+  padding: 10px 0; /* Add some vertical spacing */
+}
+
+.dropdown-item {
+  padding: 10px 0px; /* Padding around items */
+  text-decoration: none;
+  color: black;
+  display: flex; /* Use flexbox */
+  justify-content: left; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1; /* Highlight on hover */
+}
+.dropdown-header {
+  display: flex;
+  align-items: center; /* Center vertically */
+  border-bottom: 1px solid #ccc; /* Underline style */
+  padding-bottom: 8px; /* Space between header and items */
+}
