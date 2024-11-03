@@ -1,14 +1,6 @@
 <?php
 // Koneksi ke database
-function koneksi() {
-    $hostname = 'localhost';
-    $user = 'root';
-    $password = '';
-    $database = 'dummydatasensor';
-
-    $koneksi = mysqli_connect($hostname, $user, $password, $database) or die(mysqli_error($koneksi));
-    return $koneksi;
-}
+include_once "../koneksi.php";
 
 // Inisiasi koneksi
 $koneksi = koneksi();

@@ -154,23 +154,46 @@
       <p class="poppins-regular" style="color: black; font-size: 18px">17 September 2024</p>
     </div>
 
+    <!--  -->
+
+    <!-- production report -->
     <div class="card" style="margin-left: 18rem; width: 75.8rem; background-color: #00336d; border-radius: 50px">
       <div class="card-body">
         <h5 class="card-title poppins-semibold" style="color: white">Production Report</h5>
         <hr style="background-color: white; opacity: 100%; height: 1.5px" />
         <div class="row">
-          <div class="col d-flex justify-content-center">
-            <?php
-              include "mesin01.php";
-            ?>
+          <div class="col d-flex justify-content-between">
+            <?php include "grafik/grafik1.php"; ?>
+            <?php include "grafik/grafik2.php"; ?>
           </div>
         </div>
-        <div class="row mt-4">
-          <div class="col-9">
-            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #0555b3; color: white; border-radius: 4px; width: 11rem">11 - 17 Sept 2024</button>
-            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent; color: white; border-radius: 4px; border-color: #0555b3; width: 11rem">
-              <i class="bi bi-file-pdf me-2"></i>Export Report
-            </button>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafik/grafik3.php"; ?>
+            <?php include "grafik/grafik4.php"; ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafik/grafik5.php"; ?>
+            <?php include "grafik/grafik6.php"; ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafik/grafik7.php"; ?>
+            <?php include "grafik/grafik8.php"; ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafik/grafik9.php"; ?>
+            <?php include "grafik/grafik10.php"; ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafik/grafik11.php"; ?>
           </div>
         </div>
       </div>
