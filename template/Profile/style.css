@@ -1,0 +1,121 @@
+body {
+    background: #f9f9fb;
+}
+
+.view-account {
+    background: #FFFFFF;
+    margin-top: 20px;
+}
+
+.view-account .pro-label {
+    font-size: 13px;
+    padding: 4px 5px;
+    position: relative;
+    top: -5px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.view-account .side-bar {
+    padding-bottom: 30px;
+}
+
+.view-account .side-bar .user-info {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 30px;
+    color: #616670;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.view-account .side-bar .user-info .img-profile {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+.view-account .side-bar .user-info .meta li {
+    margin-bottom: 10px;
+}
+
+.view-account .side-bar .user-info .meta li.activity {
+    color: #a2a6af;
+}
+
+.view-account .content-panel {
+    padding: 30px;
+}
+
+.view-account .content-panel .title {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.view-account .content-panel .fieldset-title {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eaeaf1;
+    margin-bottom: 30px;
+    color: #616670;
+    font-size: 16px;
+}
+
+.view-account .content-panel .avatar .figure img {
+    float: right;
+    width: 64px;
+}
+
+.view-account .content-panel .form-group {
+    margin-bottom: 15px;
+}
+
+.view-account .content-panel .form-group .control-label {
+    text-align: left;
+}
+
+.view-account .content-panel .btn-primary {
+    background-color: #3ABEF9;
+    border: none;
+}
+
+@media (max-width: 767px) {
+    .view-account .content-panel .title {
+        text-align: center;
+    }
+    .view-account .side-bar .user-info .img-profile {
+        width: 60px;
+        height: 60px;
+    }
+}
+.image-container {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: flex-start; /* Aligns the image to the top */
+    margin-bottom: 5px; /* Adds spacing below the image */
+    margin-top:-10px;
+}
+
+.image-container img {
+    max-width: 100%; /* Ensures the image does not exceed container width */
+    width: 100%; /* Expands the image to fit the container */
+    height: auto; /* Maintains the image's aspect ratio */
+    object-fit: contain; /* Ensures the whole image is visible */
+    padding: -20px; /* Optional: Adds some padding around the image */
+}
+
+
+
+@media (min-width: 992px) {
+    .view-account .content-panel {
+        min-height: 800px;
+        border-left: 1px solid #f3f3f7;
+        margin-left: 200px;
+    }
+    .view-account .side-bar {
+        position: absolute;
+        width: 200px;
+    }
+    .view-account .side-bar .user-info .img-profile {
+        width: 120px;
+        height: 120px;
+    }
+}

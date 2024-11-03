@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Update user profile - Bootdey.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"> <!-- Tautan ke file CSS terpisah -->
+</head>
+<body>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> <!-- Font Awesome untuk ikon -->
+<div class="container">
+    <!-- Kontainer utama untuk tampilan profil -->
+    <div class="view-account">
+        <section class="module">
+            <div class="module-inner">
+                <!-- Bagian sidebar dengan info pengguna -->
+                <div class="side-bar">
+                    <div class="user-info">
+                        <!-- Gambar profil -->
+                        <img class="img-profile img-circle img-responsive center-block" src="Profilpoto.png" alt="Profilpoto" width="200"> <!-- Mengatur lebar menjadi 150px -->
+                        <!-- Informasi pengguna seperti nama, email, dan waktu login terakhir -->
+                        <div class="meta list list-unstyled">
+                            <li class="name">
+                                <span class="nama"> <strong>Nadia Olga S</span></strong></strong>
+                                <br>
+                                <span class="npk"><strong>NPK : 706</span></strong>
+                                <label class="label label-info">UX Designer</label>
+                            </li>
+                            <li class="email">
+                                <strong>Email:</strong> <a href="mailto:Nadia@Daihatsu.co.id">Nadia@Daihatsu.co.id</a>
+                            </li>
+                            <li class="activity">
+                                <strong>Last logged in:</strong> Today at 2:18pm
+                            </li>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- Panel konten untuk memperbarui profil -->
+                <div class="content-panel">
+                    <h1 class="title"><strong>EDIT PROFIL</strong></h1>
+                    <form class="form-horizontal"> <!-- Form untuk memperbarui informasi profil pengguna -->
+                            <h2 class="fieldset-title">Personal Info</h3> <!-- Judul bagian informasi pribadi -->
+
+                            <!-- Bagian pembaruan gambar profil -->
+                            <div class="form-group avatar">
+                                <figure class="figure col-md-2 col-sm-3 col-xs-12 image-container">
+                                    <img class="img-rounded img-responsive" src="Profilpoto.png" alt="Profilpoto">
+                                </figure>
+                                
+                                <div class="form-inline col-md-10 col-sm-9 col-xs-12">
+                                    <input type="file" class="file-uploader pull-left"> <!-- Kolom unggah gambar -->
+                                    <button type="submit" class="btn btn-sm btn-default-alt pull-left">Update Image</button> <!-- Tombol untuk memperbarui gambar -->
+                                </div>
+                            </div>
+
+                            <!-- Kolom input untuk Nama Pengguna -->
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">User Name</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <input type="text" class="form-control" placeholder="User Name" required> 
+                                </div>
+                            </div>
+
+                            <!-- Kolom input untuk Nama Depan -->
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">First Name</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <input type="text" class="form-control" placeholder="First Name" required> 
+                                </div>
+                            </div>
+
+                            <!-- Kolom input untuk Nama Belakang -->
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Last Name</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <input type="text" class="form-control" placeholder="Last Name" required> 
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">NPK</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <input type="text" class="form-control" placeholder="NPK" required> 
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Departemen Pekerjaan</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <input type="text" class="form-control" placeholder="Departemen Pekerjaan" required> 
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Email Perusahaan</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <input type="email" class="form-control" placeholder="Email Perusahaan" required> 
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Gender</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="gender" value="Male" required> Male
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="gender" value="Female" required> Female
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">New Password</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <input type="password" id="newPassword" class="form-control" placeholder="New Password" required>
+                                </div>
+                            </div>
+                            
+                            <!-- Kolom input untuk Confirm Password -->
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Confirm Password</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                                    <small id="passwordError" class="text-danger" style="display: none;">Passwords do not match!</small>
+                                </div>
+                            </div>
+                            
+                            <!-- Script untuk validasi password -->
+                            <script>
+                                // Fungsi untuk validasi password
+                                document.getElementById('confirmPassword').addEventListener('input', function () {
+                                    const newPassword = document.getElementById('newPassword').value;
+                                    const confirmPassword = document.getElementById('confirmPassword').value;
+                                    const passwordError = document.getElementById('passwordError');
+                            
+                                    if (confirmPassword !== newPassword) {
+                                        passwordError.style.display = 'block';
+                                    } else {
+                                        passwordError.style.display = 'none';
+                                    }
+                                });
+                            </script>
+                        <!-- Garis horizontal pemisah bagian form -->
+
+                        <!-- Tombol submit untuk memperbarui informasi profil -->
+                        <div class="form-group">
+                            <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
+                                <input class="btn btn-primary" type="submit" value="Update Profile">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- jQuery dan Bootstrap JavaScript untuk fungsi dan responsifitas -->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
