@@ -13,11 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
     <!-- =============== Navigation ================ -->
-    <div class="container">
+    <div class="container-fluid ps-0 ms-0">
         <div class="navigation">
             <ul>
                 <li>
@@ -154,18 +155,17 @@
                     </div>
                     
                 </div>
-                
-                
-
                   <div>
                     <img style="height: 2.5rem; width: auto; margin-left: 1px" src="../Responsive Admin Dashboard - final/assets/imgs/logo ADM.png" />
                   </div>
                 </div>
                 <div class="details">
                     <div class="recentOrders">
-                        
+                    
                     </div>
                 </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
     <!-- =========== Scripts =========  -->
     <script src="assets/js/main.js"></script>

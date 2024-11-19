@@ -151,8 +151,8 @@
     responsive: true,
     plugins: {
       legend: {
-        display: true,
-        position: "top",
+        display: false,
+        // position: "top",
       },
       title: {
         display: true,
