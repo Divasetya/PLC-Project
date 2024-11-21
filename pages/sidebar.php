@@ -55,9 +55,18 @@ $current_page = basename($_SERVER['PHP_SELF']);
           <li class="sidebar-item">
             <a class="sidebar-link d-flex justify-content-center" href="manageUser.php" aria-expanded="false" style="background-color: #DEDEDE; <?php echo $current_page == 'manageUser.php' ? '' : 'box-shadow: 0px 3px 3px 1px gray inset;'; ?> border-radius: 10px; padding: 0.4rem 0rem; margin-bottom: 0.5rem;">
                 <div style="margin: 0rem; padding: 0.2rem 0.5rem; display: flex; align-items: center; border-radius: 10px; background-color: <?php echo $current_page == 'manageUser.php' ? '#0A2647' : 'transparent'; ?>;">
-                    <iconify-icon icon="mynaui:question" style="color: <?php echo $current_page == 'manageUser.php' ? 'white' : '#0A2647'; ?>; font-size: 23px; margin-right: 0.7rem;"></iconify-icon>
-                    <span class="hide-menu poppins-regular" style="font-size: 16px; color: <?php echo $current_page == 'manageUser.php' ? 'white' : '#0A2647'; ?>;">Manage User</span>
-                    <iconify-icon icon="oui:arrow-right" style="color: <?php echo $current_page == 'manageUser.php' ? 'white' : '#0A2647'; ?>; font-size: 20px; margin-left: 6.5rem; margin-right: -0.3rem;"></iconify-icon>
+                    <iconify-icon icon="heroicons:user-group-solid" style="color: <?php echo $current_page == 'manageUser.php' ? 'white' : '#0A2647'; ?>; font-size: 23px; margin-right: 0.7rem;"></iconify-icon>
+                    <span class="hide-menu poppins-regular" style="font-size: 16px; color: <?php echo $current_page == 'manageUser.php' ? 'white' : '#0A2647'; ?>;">Manage Users</span>
+                    <iconify-icon icon="oui:arrow-right" style="color: <?php echo $current_page == 'manageUser.php' ? 'white' : '#0A2647'; ?>; font-size: 20px; margin-left: 1.7rem; margin-right: -0.3rem;"></iconify-icon>
+                </div>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link d-flex justify-content-center" href="deletedUser.php" aria-expanded="false" style="background-color: #DEDEDE; <?php echo $current_page == 'deletedUser.php' ? '' : 'box-shadow: 0px 3px 3px 1px gray inset;'; ?> border-radius: 10px; padding: 0.4rem 0rem; margin-bottom: 0.5rem;">
+                <div style="margin: 0rem; padding: 0.2rem 0.5rem; display: flex; align-items: center; border-radius: 10px; background-color: <?php echo $current_page == 'deletedUser.php' ? '#0A2647' : 'transparent'; ?>;">
+                    <iconify-icon icon="mdi:user-block" style="color: <?php echo $current_page == 'deletedUser.php' ? 'white' : '#0A2647'; ?>; font-size: 23px; margin-right: 0.7rem;"></iconify-icon>
+                    <span class="hide-menu poppins-regular" style="font-size: 16px; color: <?php echo $current_page == 'deletedUser.php' ? 'white' : '#0A2647'; ?>;">Deleted User</span>
+                    <iconify-icon icon="oui:arrow-right" style="color: <?php echo $current_page == 'deletedUser.php' ? 'white' : '#0A2647'; ?>; font-size: 20px; margin-left: 2.2rem; margin-right: -0.3rem;"></iconify-icon>
                 </div>
             </a>
           </li>

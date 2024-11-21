@@ -1,23 +1,23 @@
-<?php include "fetch_data.php"; ?>
+<?php include "../backend/lowPressure_fetchData.php"; ?>
 
-<div style="width: 570px; background-color: white; border-radius: 30px; padding: 1rem; margin-top: 1rem"><canvas id="myChart6"></canvas></div>
+<div style="width: 570px; background-color: white; border-radius: 30px; padding: 1rem; margin-top: 1rem"><canvas id="myChart3"></canvas></div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  const ctx6 = document.getElementById("myChart6").getContext("2d");
-  const labels6 = <?php echo json_encode($serialNumbers); ?>;
-  const data6 = {
-    labels: labels6,
+  const ctx3 = document.getElementById("myChart3").getContext("2d");
+  const labels3 = <?php echo json_encode($serialNumbers); ?>;
+  const data3 = {
+    labels: labels3,
     datasets: [
       {
-        label: "R_YUGUCHI_Temp_Cy_On",
-        data: <?php echo json_encode($rYuguchiTempCyOn); ?>,
+        label: "R_UP_Main_Temp_Cy_On",
+        data: <?php echo json_encode($rUpMainTempCyOn); ?>,
         fill: false,
         borderColor: "rgb(255, 99, 132)",
         tension: 0.1,
       },
       {
-        label: "L_YUGUCHI_Temp_Cy_On",
-        data: <?php echo json_encode($lYuguchiTempCyOn); ?>,
+        label: "L_UP_Main_Temp_Cy_On",
+        data: <?php echo json_encode($lUpMainTempCyOn); ?>,
         fill: false,
         borderColor: "rgb(54, 162, 235)",
         tension: 0.1,
@@ -25,7 +25,7 @@
       // Lower limit line
       {
         label: "Lower Limit",
-        data: Array(labels6.length).fill(250), // Replace 400 with your actual lower limit
+        data: Array(labels3.length).fill(250), // Replace 400 with your actual lower limit
         fill: false,
         borderColor: "black",
         borderDash: [5, 5], // Dashed line
@@ -34,7 +34,7 @@
       // Upper limit line
       {
         label: "Upper Limit",
-        data: Array(labels6.length).fill(300), // Replace 300 with your actual upper limit
+        data: Array(labels3.length).fill(300), // Replace 300 with your actual upper limit
         fill: false,
         borderColor: "black", 
         borderDash: [5, 5], // Dashed line
@@ -43,7 +43,7 @@
     ],
   };
 
-  const options6 = {
+  const options3 = {
     responsive: true,
     scales: {
       y: {
@@ -58,25 +58,25 @@
       },
       title: {
         display: true,
-        text: "Yuguchi",
+        text: "Upper Main Body",
       },
     },
   };
 
-  const myChart6 = new Chart(ctx6, {
+  const myChart3 = new Chart(ctx3, {
     type: "line",
-    data: data6,
-    options: options6,
+    data: data3,
+    options: options3,
   });
 
   setInterval(() => {
     fetch("fetch_data.php")
       .then((response) => response.json())
       .then((data) => {
-        myChart6.data.labels = data.labels;
-        myChart6.data.datasets[0].data = data.datasets[0].data; 
-        myChart6.data.datasets[1].data = data.datasets[1].data; 
-        myChart6.update();
+        myChart3.data.labels = data.labels;
+        myChart3.data.datasets[0].data = data.datasets[0].data; 
+        myChart3.data.datasets[1].data = data.datasets[1].data; 
+        myChart3.update();
       });
   }, 1000);
 </script>

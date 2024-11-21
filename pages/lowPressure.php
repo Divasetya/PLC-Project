@@ -35,10 +35,9 @@ include 'sidebar.php';
   <body class="poppins-regular" style="height: 60rem;">
 
     <!-- konten -->
-    
     <div class="d-flex justify-content-end align-item-start" style="margin-top: 4rem">
       <div style="padding: 1rem 1rem;">
-        <button class="btn dropdown-toggle poppins-semibold" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #0555b3; border-color: black; color: white; border-radius: 7px; border-width: 2px; box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);">11 - 17 Sept 2024</button>
+        <button class="btn dropdown-toggle poppins-semibold" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #0555b3; border-color: black; color: white; border-radius: 7px; border-width: 2px; box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);">Tanggal</button>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="#">Action</a></li>
           <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -46,7 +45,7 @@ include 'sidebar.php';
         </ul>
       </div>
       <div style="margin-left: -1.5rem; padding: 1rem 1rem;">
-        <button class="btn dropdown-toggle poppins-semibold" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #0555b3; border-color: black; color: white; border-radius: 7px; border-width: 2px; box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);">11 - 17 Sept 2024</button>
+        <button class="btn dropdown-toggle poppins-semibold" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #0555b3; border-color: black; color: white; border-radius: 7px; border-width: 2px; box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);">Shift</button>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="#">Action</a></li>
           <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -69,12 +68,40 @@ include 'sidebar.php';
         <hr style="background-color: white; opacity: 100%; height: 1.5px" />
         <div class="row">
           <div class="col d-flex justify-content-between">
-            <div style="width: 50%; height: 18rem; background-color: white; border-radius: 30px; padding: 0rem 1.8rem;">
-              <iframe src="http://127.0.0.1:1880/ui/#!/0?socketid=X_hy0PFeVG2SZFKsAAAD" class="node-red-frame"></iframe>
-            </div>
-            <div style="width: 50%; background-color: white; border-radius: 30px;">
-              <!-- <iframe src="http://127.0.0.1:1880/ui/#!/1?socketid=X_hy0PFeVG2SZFKsAAAD" class="node-red-frame"></iframe> -->
-            </div>
+            <?php include "grafikLowPress/grafik1.php" ?>
+            <?php include "grafikLowPress/grafik2.php" ?>
+            <!-- <div style="width: 50%; height: 18rem; background-color: white; border-radius: 30px; padding: 0rem 1.8rem;">
+              tempat untuk menampilkan node-red
+            </div> -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik3.php" ?>
+            <?php include "grafikLowPress/grafik4.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik5.php" ?>
+            <?php include "grafikLowPress/grafik6.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik7.php" ?>
+            <?php include "grafikLowPress/grafik8.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik9.php" ?>
+            <?php include "grafikLowPress/grafik10.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik11.php" ?>
           </div>
         </div>
       </div>

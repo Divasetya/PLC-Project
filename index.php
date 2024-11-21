@@ -26,7 +26,7 @@ if (isset($_SESSION['npk'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Modern Login Page TempWatch</title>
+    <title>TempWatch</title>
 </head>
 
 <body>
@@ -45,7 +45,7 @@ if (isset($_SESSION['npk'])) {
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-right">
-                    <div class="card" style="padding: 4rem 2rem; background-color: transparent; border-color: white; border-radius: 48px; border-width: 2px; width: 88%; height: 28rem; position: absolute;">
+                    <div class="card" style="padding: 3rem 2rem; background-color: transparent; border-color: white; border-radius: 48px; border-width: 2px; width: 80%; height: 24rem; position: absolute;">
                         <div class="card-body" style="margin-top: 6rem;">
                             <div class="d-flex justify-content-start">
                                 <h2 style="color: white;">Hello, Insan Astra!</h2>     
@@ -58,8 +58,8 @@ if (isset($_SESSION['npk'])) {
                             </div>
                         </div>
                     </div>
-                    <img style="width: 100%; max-width: 21rem; position: absolute; top: 10.1rem; left: 22rem" src="src/image/Login.png">
-                    <img style="width: 5rem; position: absolute; top: 28rem; left: 2rem; border-radius: 50%" src="src/image/Logo daihatsu.png">
+                    <img style="width: 60%; position: absolute; top: 13.1rem; left: 22.3rem" src="src/image/Welcome.png">
+                    <img style="width: 5rem; position: absolute; top: 22rem; left: 2rem; border-radius: 50%" src="src/image/Logo daihatsu.png">
                 </div>
             </div>
         </div>

@@ -1,0 +1,66 @@
+.addbutton{
+    border-radius: 10px;
+    background-color: rgb(2, 181, 2);
+    border-color: transparent;
+    padding: 0.5rem 1rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.Display{
+    display: flex; 
+    justify-content: center;
+    box-shadow: none;
+    border: 1px solid black;
+    width: 80%;
+    margin-left: 18rem;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.styled-table {
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px; /* Menambahkan border-radius */
+    overflow: hidden; /* Untuk memastikan elemen di dalamnya tidak keluar dari radius */
+    table-layout: auto; /* Kolom menyesuaikan dengan konten */
+}
+
+.styled-table thead tr {
+    background-color: #0f67cf;
+    color: #fff;
+    text-align: left;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 20px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.133);
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.delete-btn {
+    background-color: rgb(253, 70, 70);
+    border-radius: 5px;
+    border: none;
+    padding: 3px 8px;
+    color: white;
+}
+.edit-btn {
+    background-color: #0f67cf;
+    border-radius: 5px;
+    border: none;
+    padding: 3px 8px;
+    color: white;
+}

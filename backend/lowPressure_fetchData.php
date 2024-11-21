@@ -1,9 +1,9 @@
 <?php
 // Koneksi ke database
-include_once "../koneksi.php";
+include_once "databaseconn.php";
 
 // Inisiasi koneksi
-$koneksi = koneksi();
+$koneksi = getConnection();
 
 // Cek koneksi
 if ($koneksi->connect_error) {

@@ -1,4 +1,4 @@
-<?php include "fetch_data.php"; ?>
+<?php include "../backend/lowPressure_fetchData.php"; ?>
 
 <div>
   <div style="width: 570px; background-color: white; border-radius: 30px; padding: 1rem; margin-top: 1rem"><canvas id="myChart"></canvas></div>
