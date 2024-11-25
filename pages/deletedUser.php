@@ -30,10 +30,12 @@
     <!-- iconify -->
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
 
   <body class="poppins-regular" style="height: 60rem;">
-    <h1 style="margin-top: 3rem; margin-left: 18rem;">Deleted User</h1>
+    <h1 style="margin-top: 7rem; margin-left: 18rem;">Deleted User</h1>
     <div class="card Display">
         <div class="card-body">
             <div class="table-container">
@@ -77,7 +79,7 @@
         </div>
     </div>  
     
-    <script src="../backend/deletedUser.js"></script>
+    <script src="../backend/deletedUser_restore.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -1,5 +1,4 @@
 <?php
-    header('Content-Type: application/json'); // Pastikan respons berupa JSON
     include 'databaseconn.php'; // File koneksi database
 
     // Fungsi untuk mengambil user non-aktif
@@ -11,32 +10,30 @@
         $result = $conn->query($sql);
 
         if (!$result) {
-            die(json_encode(['status' => 'error', 'message' => 'Query error: ' . $conn->error]));
+            die("Query error: " . $conn->error);
         }
 
         $conn->close();
         return $result;
     }
-?>
 
-<?php
+    if (isset($_POST['npk'])) {
+        $npk = intval($_POST['npk']); // Ambil NPK dari request
 
-if (isset($_POST['npk'])) {
-    $npk = intval($_POST['npk']); // Ambil NPK dari request
+        $conn = getConnection();
+        $sql = "UPDATE user SET is_active = 1 WHERE npk = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $npk);
 
-    $conn = getConnection();
-    $sql = "UPDATE user SET is_active = 1 WHERE npk = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $npk);
+        if ($stmt->execute()) {
+            echo json_encode(['status' => 'success', 'message' => 'User berhasil diaktifkan.']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Gagal mengaktifkan user.']);
+        }
 
-    if ($stmt->execute()) {
-        echo json_encode(['status' => 'success', 'message' => 'User berhasil dipulihkan.']);
-    } else {
-        echo json_encode(['status' => 'error', 'message' => 'Gagal memulihkan user.']);
+        $stmt->close();
+        $conn->close();
+
     }
-
-    $stmt->close();
-    $conn->close();
-
-}
+    
 ?>

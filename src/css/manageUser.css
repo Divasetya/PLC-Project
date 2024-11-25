@@ -11,7 +11,7 @@
     display: flex; 
     justify-content: center;
     box-shadow: none;
-    border: 1px solid black;
+    border: 1px solid rgba(128, 128, 128, 0.574);
     width: 80%;
     margin-left: 18rem;
 }
@@ -43,7 +43,7 @@
 }
 
 .styled-table tbody tr {
-    border-bottom: 2px solid rgba(0, 0, 0, 0.133);
+    /* border-bottom: 2px solid rgba(0, 0, 0, 0.133); */
 }
 
 .styled-table tbody tr:hover {

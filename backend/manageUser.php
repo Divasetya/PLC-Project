@@ -17,26 +17,23 @@
         return $result;
     }
 
-?>
+    if (isset($_POST['npk'])) {
+        $npk = intval($_POST['npk']); // Ambil NPK dari request
 
-<?php
+        $conn = getConnection();
+        $sql = "UPDATE user SET is_active = 0 WHERE npk = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $npk);
 
-if (isset($_POST['npk'])) {
-    $npk = intval($_POST['npk']); // Ambil NPK dari request
+        if ($stmt->execute()) {
+            echo json_encode(['status' => 'success', 'message' => 'User berhasil dihapus.']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Gagal menghapus user.']);
+        }
 
-    $conn = getConnection();
-    $sql = "UPDATE user SET is_active = 0 WHERE npk = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $npk);
+        $stmt->close();
+        $conn->close();
 
-    if ($stmt->execute()) {
-        echo json_encode(['status' => 'success', 'message' => 'User berhasil dihapus.']);
-    } else {
-        echo json_encode(['status' => 'error', 'message' => 'Gagal menghapus user.']);
     }
 
-    $stmt->close();
-    $conn->close();
-
-}
 ?>

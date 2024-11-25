@@ -1,28 +1,26 @@
-$(document).ready(function () {
-    $(".restore-btn").click(function () {
-        const npk = $(this).data("npk");
+$(document).on("click", ".restore-btn", function () {
+    const npk = $(this).data("npk");
+    console.log("Tombol Pulihkan diklik. NPK:", npk); // Debug
 
-        if (confirm("Apakah Anda yakin ingin menghapus user ini?")) {
-            $.ajax({
-                url: "../backend/manageUser.php",
-                type: "POST",
-                data: { npk: npk },
-                success: function (response) {
-                    const result = JSON.parse(response);
+    if (confirm("Apakah Anda yakin ingin mengaktifkan user ini?")) {
+        $.ajax({
+            url: "../backend/deletedUser.php",
+            type: "POST",
+            data: { npk: npk },
+            success: function (response) {
+                console.log("Response dari server:", response); // Debug respons server
+                const result = JSON.parse(response);
 
-                    if (result.status === "success") {
-                        alert(result.message);
-
-                        // Refresh tabel tanpa reload penuh
-                        $("#user-table").load(location.href + " #user-table>*", "");
-                    } else {
-                        alert(result.message);
-                    }
-                },
-                error: function () {
-                    alert("Terjadi kesalahan saat menghapus user.");
-                },
-            });
-        }
-    });
+                if (result.status === "success") {
+                    alert(result.message);
+                    $("#user-table").load(location.href + " #user-table>*", ""); // Refresh tabel
+                } else {
+                    alert(result.message);
+                }
+            },
+            error: function () {
+                alert("Terjadi kesalahan saat mengatifkan user.");
+            },
+        });
+    }
 });
