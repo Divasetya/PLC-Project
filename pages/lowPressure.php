@@ -55,8 +55,7 @@ include 'sidebar.php';
     </div>
     
     <div class="d-flex" style="margin-left: 17rem; padding: 0rem 1rem; margin-top: -1rem">
-      <p class="poppins-semibold" style="color: black; font-weight: 600; font-size: 18px; margin-right: 9px">Low Pressure Gedung B</p>
-      <p class="poppins-regular" style="color: black; font-size: 18px">17 September 2024</p>
+      <p class="poppins-semibold" style="color: black; font-weight: 600; font-size: 18px; margin-right: 9px">Gedung B LPC 11</p>
     </div>
 
     
@@ -64,6 +63,8 @@ include 'sidebar.php';
     <div class="card" style="margin-left: 18rem; width: 75.8rem; background-color: #00336d; border-radius: 50px">
       <div class="card-body">
         <!-- tabel abnormality -->
+        <h5 class="card-title poppins-semibold" style="color: white">Daftar Abnormality</h5>
+        <hr style="background-color: white; opacity: 100%; height: 1.5px" />
         <?php include "lowPressure_abnormalityTable.php"; ?>
 
         <!-- production report -->
