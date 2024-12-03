@@ -1,4 +1,4 @@
-<?php include "../backend/lowPressure_fetchData.php"; ?>
+<?php include "../backend/fetchDataSensor.php"; ?>
 
 <div style="width: 570px; background-color: white; border-radius: 30px; padding: 1rem; margin-top: 1rem"><canvas id="myChart4"></canvas></div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -9,32 +9,30 @@
     labels: labels4,
     datasets: [
       {
-        label: "R_UP_SP_Temp_Cy_On",
-        data: <?php echo json_encode($rUpSpTempCyOn); ?>,
+        label: "Cycle Time 1",
+        data: <?php echo json_encode($cycleTime1); ?>,
         fill: false,
         borderColor: "rgb(255, 99, 132)",
         tension: 0.1,
       },
       {
-        label: "L_UP_SP_Temp_Cy_On",
-        data: <?php echo json_encode($lUpSpTempCyOn); ?>,
+        label: "Cycle Time 2",
+        data: <?php echo json_encode($cycleTime2); ?>,
         fill: false,
         borderColor: "rgb(54, 162, 235)",
         tension: 0.1,
       },
-      // Lower limit line
       {
-        label: "Lower Limit",
-        data: Array(labels4.length).fill(100), // Replace 400 with your actual lower limit
+        label: "Cycle Time 3",
+        data: <?php echo json_encode($cycleTime3); ?>,
         fill: false,
-        borderColor: "black",
-        borderDash: [5, 5], // Dashed line
-        pointRadius: 0,
+        borderColor: "rgb(75, 192, 192)",
+        tension: 0.1,
       },
-      // Upper limit line
+      //sebagai control line (garis hitam putus-putus)
       {
         label: "Upper Limit",
-        data: Array(labels4.length).fill(150), // Replace 300 with your actual upper limit
+        data: Array(labels4.length).fill(310), // Replace 300 with your actual upper limit
         fill: false,
         borderColor: "black", 
         borderDash: [5, 5], // Dashed line
@@ -47,8 +45,8 @@
     responsive: true,
     scales: {
       y: {
-        min: 50, // Minimum value for y-axis
-        max: 200, // Maximum value for y-axis
+        min: 0, // Minimum value for y-axis
+        max: 350, // Maximum value for y-axis
       }
     },
     plugins: {
@@ -58,7 +56,7 @@
       },
       title: {
         display: true,
-        text: "Spark Plug",
+        text: "Cycle Time (sec)",
       },
     },
   };
@@ -69,14 +67,20 @@
     options: options4,
   });
 
-  setInterval(() => {
-    fetch("fetch_data.php")
-      .then((response) => response.json())
-      .then((data) => {
-        myChart4.data.labels = data.labels;
-        myChart4.data.datasets[0].data = data.datasets[0].data; 
-        myChart4.data.datasets[1].data = data.datasets[1].data; 
-        myChart4.update();
-      });
-  }, 1000);
+  function fetchData() {
+      fetch("../backend/fetchDataSensor.php")
+        .then((response) => response.json())
+        .then((data) => {
+          // Update chart labels and data dynamically
+          myChart4.data.labels = data.labels;
+          myChart4.data.datasets[0].data = data.cycleTime1;
+          myChart4.data.datasets[1].data = data.cycleTime2;
+          myChart4.data.datasets[2].data = data.cycleTime3;
+          myChart4.update(); // Refresh chart
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    }
+
+    // Refresh data every 5 minutes
+    setInterval(fetchData, 300000); // 300000 ms = 5 minutes
 </script>

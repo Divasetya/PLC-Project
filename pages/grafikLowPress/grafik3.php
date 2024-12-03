@@ -1,4 +1,4 @@
-<?php include "../backend/lowPressure_fetchData.php"; ?>
+<?php include "../backend/fetchDataSensor.php"; ?>
 
 <div style="width: 570px; background-color: white; border-radius: 30px; padding: 1rem; margin-top: 1rem"><canvas id="myChart3"></canvas></div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -9,23 +9,24 @@
     labels: labels3,
     datasets: [
       {
-        label: "R_UP_Main_Temp_Cy_On",
-        data: <?php echo json_encode($rUpMainTempCyOn); ?>,
+        label: "Cooling Water In <Cycle Start>",
+        data: <?php echo json_encode($coolingWaterInCycleStart); ?>,
         fill: false,
         borderColor: "rgb(255, 99, 132)",
         tension: 0.1,
       },
       {
-        label: "L_UP_Main_Temp_Cy_On",
-        data: <?php echo json_encode($lUpMainTempCyOn); ?>,
+        label: "Cooling Air In <Cycle Start>",
+        data: <?php echo json_encode($coolingAirInCycleStart); ?>,
         fill: false,
         borderColor: "rgb(54, 162, 235)",
         tension: 0.1,
       },
+      //sebagai control line (grais hitam putus-putus)
       // Lower limit line
       {
         label: "Lower Limit",
-        data: Array(labels3.length).fill(250), // Replace 400 with your actual lower limit
+        data: Array(labels3.length).fill(30), // Replace 400 with your actual lower limit
         fill: false,
         borderColor: "black",
         borderDash: [5, 5], // Dashed line
@@ -34,7 +35,7 @@
       // Upper limit line
       {
         label: "Upper Limit",
-        data: Array(labels3.length).fill(300), // Replace 300 with your actual upper limit
+        data: Array(labels3.length).fill(45), // Replace 300 with your actual upper limit
         fill: false,
         borderColor: "black", 
         borderDash: [5, 5], // Dashed line
@@ -47,8 +48,8 @@
     responsive: true,
     scales: {
       y: {
-        min: 200, // Minimum value for y-axis
-        max: 500, // Maximum value for y-axis
+        min: 25, // Minimum value for y-axis
+        max: 50, // Maximum value for y-axis
       }
     },
     plugins: {
@@ -58,7 +59,7 @@
       },
       title: {
         display: true,
-        text: "Upper Main Body",
+        text: "Cooling Temp (°C)",
       },
     },
   };
@@ -69,14 +70,19 @@
     options: options3,
   });
 
-  setInterval(() => {
-    fetch("fetch_data.php")
-      .then((response) => response.json())
-      .then((data) => {
-        myChart3.data.labels = data.labels;
-        myChart3.data.datasets[0].data = data.datasets[0].data; 
-        myChart3.data.datasets[1].data = data.datasets[1].data; 
-        myChart3.update();
-      });
-  }, 1000);
+  function fetchData() {
+      fetch("../backend/fetchDataSensor.php")
+        .then((response) => response.json())
+        .then((data) => {
+          // Update chart labels and data dynamically
+          myChart3.data.labels = data.labels;
+          myChart3.data.datasets[0].data = data.coolingWaterInCycleStart;
+          myChart3.data.datasets[1].data = data.coolingAirInCycleStart;
+          myChart3.update(); // Refresh chart
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    }
+
+    // Refresh data every 5 minutes
+    setInterval(fetchData, 300000); // 300000 ms = 5 minutes
 </script>

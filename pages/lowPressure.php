@@ -19,17 +19,17 @@ include 'sidebar.php';
     <link rel="stylesheet" href="../src/css/styles.min.css" />
     <link rel="stylesheet" href="../src/css/dashboard.css" />
     <link rel="stylesheet" href="../Header/styles.css" />
+    <link rel="stylesheet" href="../src/css/lowPressure.css" />
     <!-- bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <!-- DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <!-- iconify -->
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
-    <style>
-      .node-red-frame {
-        width: 100%;
-        height: 100%; /*Atur tinggi sesuai kebutuhan */
-      }
-    </style>
   </head>
 
   <body class="poppins-regular" style="height: 60rem;">
@@ -61,9 +61,12 @@ include 'sidebar.php';
 
     
 
-    <!-- production report -->
     <div class="card" style="margin-left: 18rem; width: 75.8rem; background-color: #00336d; border-radius: 50px">
       <div class="card-body">
+        <!-- tabel abnormality -->
+        <?php include "lowPressure_abnormalityTable.php"; ?>
+
+        <!-- production report -->
         <h5 class="card-title poppins-semibold" style="color: white">Production Report</h5>
         <hr style="background-color: white; opacity: 100%; height: 1.5px" />
         <div class="row">
@@ -84,24 +87,6 @@ include 'sidebar.php';
         <div class="row">
           <div class="col d-flex justify-content-between">
             <?php include "grafikLowPress/grafik5.php" ?>
-            <?php include "grafikLowPress/grafik6.php" ?>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col d-flex justify-content-between">
-            <?php include "grafikLowPress/grafik7.php" ?>
-            <?php include "grafikLowPress/grafik8.php" ?>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col d-flex justify-content-between">
-            <?php include "grafikLowPress/grafik9.php" ?>
-            <?php include "grafikLowPress/grafik10.php" ?>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col d-flex justify-content-between">
-            <?php include "grafikLowPress/grafik11.php" ?>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-<?php include "../backend/lowPressure_fetchData.php"; ?>
+<?php include "../backend/fetchData.php"; ?>
 
 <div style="width: 570px; background-color: white; border-radius: 30px; padding: 1rem; margin-top: 1rem"><canvas id="myChart11"></canvas></div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -62,14 +62,19 @@
     options: options11,
   });
 
-  setInterval(() => {
-    fetch("fetch_data.php")
-      .then((response) => response.json())
-      .then((data) => {
-        myChart11.data.labels = data.labels;
-        myChart11.data.datasets[0].data = data.datasets[0].data; 
-        myChart11.data.datasets[1].data = data.datasets[1].data; 
-        myChart11.update();
-      });
-  }, 1000);
+  function fetchData() {
+      fetch("../backend/fetchdata.php")
+        .then((response) => response.json())
+        .then((data) => {
+          // Update chart labels and data dynamically
+          myChart11.data.labels = data.labels;
+          myChart11.data.datasets[0].data = data.rLowMain1TempCyOn;
+          myChart11.data.datasets[1].data = data.lLowMain1TempCyOn;
+          myChart11.update(); // Refresh chart
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    }
+
+    // Refresh data every 5 minutes
+    setInterval(fetchData, 300000); // 300000 ms = 5 minutes
 </script>

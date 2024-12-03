@@ -4,7 +4,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "dummydatasensor";
+        $dbname = "dataharvesting";
 
         // Membuat koneksi
         $conn = new mysqli($servername, $username, $password, $dbname);

@@ -8,7 +8,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
   <!-- Sidebar Start -->
-  <aside class="left-sidebar" style="background: linear-gradient(to bottom, #102742 0%, #0f67cf 100%); border-radius: 50px">
+  <aside class="left-sidebar" style="background: linear-gradient(to bottom, #102742 0%, #0f67cf 100%);">
     <div style="padding-top: 1rem">
       <div class="brand-logo d-flex align-items-center justify-content-between">
         <a href="./index.html" class="text-nowrap logo-img poppins-semibold">

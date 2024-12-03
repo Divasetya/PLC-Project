@@ -1,5 +1,5 @@
 <?php
-  include "../backend/lowPressure_fetchData.php";
+  include "../backend/fetchDataSensor.php";
 ?>
 
 <div style="width: 700px; background-color: white; border-radius: 30px; padding: 1rem; margin-top: 1rem"><canvas id="myChart"></canvas></div>

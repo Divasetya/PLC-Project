@@ -1,4 +1,4 @@
-<?php include "../backend/lowPressure_fetchData.php"; ?>
+<?php include "../backend/fetchDataSensor.php"; ?>
 
 <div>
   <div style="width: 570px; background-color: white; border-radius: 30px; padding: 1rem; margin-top: 1rem"><canvas id="myChart"></canvas></div>
@@ -11,23 +11,24 @@
       labels: labels,
       datasets: [
         {
-          label: "R_Low_Main1_Temp_Cy_On",
-          data: <?php echo json_encode($rLowMain1TempCyOn); ?>,
+          label: "R Upper Water Flow",
+          data: <?php echo json_encode($rUpperWaterFlow); ?>,
           fill: false,
           borderColor: "rgb(100, 50, 200)",
           tension: 0.1,
         },
         {
-          label: "L_LOW_Main1_Temp_Cy_On",
-          data: <?php echo json_encode($lLowMain1TempCyOn); ?>,
+          label: "L Upper Water Flow",
+          data: <?php echo json_encode($lUpperWaterFlow); ?>,
           fill: false,
           borderColor: "rgb(75, 192, 192)",
           tension: 0.1,
         },
+        // sebagai control line (garis hitam putus-putus)
         // Lower limit line
         {
           label: "Lower Limit",
-          data: Array(labels.length).fill(460), // Replace 400 with your actual lower limit
+          data: Array(labels.length).fill(59), // Replace 20 with your actual lower limit
           fill: false,
           borderColor: "black",
           borderDash: [5, 5], // Dashed line
@@ -36,7 +37,7 @@
         // Upper limit line
         {
           label: "Upper Limit",
-          data: Array(labels.length).fill(560), // Replace 300 with your actual upper limit
+          data: Array(labels.length).fill(41), // Replace 50 with your actual upper limit
           fill: false,
           borderColor: "black", 
           borderDash: [5, 5], // Dashed line
@@ -49,8 +50,8 @@
       responsive: true,
       scales: {
         y: {
-          min: 450, // Minimum value for y-axis
-          max: 600, // Maximum value for y-axis
+          min: 0, // Minimum value for y-axis
+          max: 80, // Maximum value for y-axis
         }
       },
       plugins: {
@@ -60,7 +61,7 @@
         },
         title: {
           display: true,
-          text: "Lower Main Body #1",
+          text: "Upper Water Cooling Flow (ds/min)",
         },
       },
     };
@@ -71,16 +72,21 @@
       options: options,
     });
 
-    setInterval(() => {
-      fetch("fetch_data.php")
+    function fetchData() {
+      fetch("../backend/fetchDataSensor.php")
         .then((response) => response.json())
         .then((data) => {
+          // Update chart labels and data dynamically
           myChart.data.labels = data.labels;
-          myChart.data.datasets[0].data = data.datasets[0].data; 
-          myChart.data.datasets[1].data = data.datasets[1].data; 
-          myChart.update();
-        });
-    }, 1000);
+          myChart.data.datasets[0].data = data.rUpperWaterFlow;
+          myChart.data.datasets[1].data = data.lUpperWaterFlow;
+          myChart.update(); // Refresh chart
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    }
+
+    // Refresh data every 5 minutes
+    setInterval(fetchData, 300000); // 300000 ms = 5 minutes
   </script>
 <!-- <button type="button" class="btn py-1 px-3 mt-2" style="background-color: #DEDEDE; color: black; position: absolute; top: 23.5rem;">Lihat detail</button> -->
 </div>
