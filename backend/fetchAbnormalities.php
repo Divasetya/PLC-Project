@@ -19,10 +19,10 @@
     ab.`value`, 
     ab.`min_limit`, 
     ab.`max_limit` 
-FROM abnormalities AS ab 
-JOIN datasensor AS ds ON ab.`id` = ds.`id` 
-ORDER BY ab.`timestamp` DESC 
-LIMIT 10";
+    FROM abnormalities AS ab 
+    JOIN datasensor AS ds ON ab.`id` = ds.`id` 
+    ORDER BY ab.`timestamp` DESC 
+    LIMIT 15";
 
     $result = $koneksi->query($query);
 

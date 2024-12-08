@@ -1,4 +1,4 @@
-<?php include "../backend/fetchData.php"; ?>
+<?php include "../backend/fetchDataSensor.php"; ?>
 
 <div style="width: 570px; background-color: white; border-radius: 30px; padding: 1rem; margin-top: 1rem"><canvas id="myChart11"></canvas></div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -9,16 +9,23 @@
     labels: labels11,
     datasets: [
       {
-        label: "Cycle_Time1",
-        data: <?php echo json_encode($cycleTime1); ?>,
+        label: "R Lower Gate1 Temp <Cycle Start>",
+        data: <?php echo json_encode($rLowerGate1TempCycleStart); ?>,
         fill: false,
         borderColor: "rgb(255, 99, 132)",
+        tension: 0.1,
+      },
+      {
+        label: "L Lower Gate1 Temp <Cycle Start>",
+        data: <?php echo json_encode($lLowerGate1TempCycleStart); ?>,
+        fill: false,
+        borderColor: "rgb(54, 162, 235)",
         tension: 0.1,
       },
       // Lower limit line
       {
         label: "Lower Limit",
-        data: Array(labels11.length).fill(250), // Replace 400 with your actual lower limit
+        data: Array(labels11.length).fill(470), // Replace 400 with your actual lower limit
         fill: false,
         borderColor: "black",
         borderDash: [5, 5], // Dashed line
@@ -27,7 +34,7 @@
       // Upper limit line
       {
         label: "Upper Limit",
-        data: Array(labels11.length).fill(300), // Replace 300 with your actual upper limit
+        data: Array(labels11.length).fill(530), // Replace 300 with your actual upper limit
         fill: false,
         borderColor: "black", 
         borderDash: [5, 5], // Dashed line
@@ -40,8 +47,8 @@
     responsive: true,
     scales: {
       y: {
-        min: 200, // Minimum value for y-axis
-        max: 500, // Maximum value for y-axis
+        min: 450, // Minimum value for y-axis
+        max: 550, // Maximum value for y-axis
       }
     },
     plugins: {
@@ -51,7 +58,7 @@
       },
       title: {
         display: true,
-        text: "Water Flow",
+        text: "Lower Gate 1 <Cycle Start>",
       },
     },
   };
@@ -63,13 +70,13 @@
   });
 
   function fetchData() {
-      fetch("../backend/fetchdata.php")
+      fetch("../backend/fetchDataSensor.php")
         .then((response) => response.json())
         .then((data) => {
           // Update chart labels and data dynamically
           myChart11.data.labels = data.labels;
-          myChart11.data.datasets[0].data = data.rLowMain1TempCyOn;
-          myChart11.data.datasets[1].data = data.lLowMain1TempCyOn;
+          myChart11.data.datasets[0].data = data.rLowerGate1TempCycleStart;
+          myChart11.data.datasets[1].data = data.lLowerGate1TempCycleStart;
           myChart11.update(); // Refresh chart
         })
         .catch((error) => console.error("Error fetching data:", error));

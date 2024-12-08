@@ -69,8 +69,8 @@
             <label class="d-flex align-items-center">
                 <span style="width: 6rem; margin-right: 20px; color: white">Jumlah baris:</span> 
                 <select id="entriesSelect" class="form-select form-select-sm d-inline-block" style="width: auto; margin-right:30px;">
-                    <option value="25">25</option>
-                    <option value="50">50</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
                     <option value="100">100</option>
                 </select>
             </label>
@@ -122,7 +122,7 @@
 
         // Add Previous button
         prevButton.className = `page-item ${currentPage === 1 ? "disabled" : ""}`;
-        prevButton.innerHTML = `<a style="height: 34px;" class="page-link d-flex align-items-center" href="#"><i class="bi bi-chevron-double-left"></i></a>`;
+        prevButton.innerHTML = `<a style="height: 34.5px;" class="page-link d-flex align-items-center" href="#"><i class="bi bi-chevron-double-left"></i></a>`;
         prevButton.addEventListener("click", (e) => {
             e.preventDefault();
             if (currentPage > 1) {
@@ -152,7 +152,7 @@
 
         // Add Next button
         nextButton.className = `page-item ${currentPage === totalPages ? "disabled" : ""}`;
-        nextButton.innerHTML = `<a style="height: 34px;" class="page-link d-flex align-items-center" href="#"><i class="bi bi-chevron-double-right"></i></a>`;
+        nextButton.innerHTML = `<a style="height: 34.5px;" class="page-link d-flex align-items-center" href="#"><i class="bi bi-chevron-double-right"></i></a>`;
         nextButton.addEventListener("click", (e) => {
             e.preventDefault();
             if (currentPage < totalPages) {

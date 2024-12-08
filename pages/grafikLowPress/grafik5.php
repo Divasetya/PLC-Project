@@ -23,23 +23,23 @@
         tension: 0.1,
       },
       // Lower limit line
-      // {
-      //   label: "Lower Limit",
-      //   data: Array(labels5.length).fill(20), // Replace 500 with your actual lower limit
-      //   fill: false,
-      //   borderColor: "black",
-      //   borderDash: [5, 5], // Dashed line
-      //   pointRadius: 0,
-      // },
+      {
+        label: "Lower Limit",
+        data: Array(labels5.length).fill(320), // Replace 500 with your actual lower limit
+        fill: false,
+        borderColor: "black",
+        borderDash: [5, 5], // Dashed line
+        pointRadius: 0,
+      },
       // Upper limit line
-      // {
-      //   label: "Upper Limit",
-      //   data: Array(labels5.length).fill(30), // Replace 300 with your actual upper limit
-      //   fill: false,
-      //   borderColor: "black", 
-      //   borderDash: [5, 5], // Dashed line
-      //   pointRadius: 0,
-      // }
+      {
+        label: "Upper Limit",
+        data: Array(labels5.length).fill(380), // Replace 300 with your actual upper limit
+        fill: false,
+        borderColor: "black", 
+        borderDash: [5, 5], // Dashed line
+        pointRadius: 0,
+      }
     ],
   };
 
@@ -47,7 +47,7 @@
     responsive: true,
     scales: {
       y: {
-        min: 200, // Minimum value for y-axis
+        min: 300, // Minimum value for y-axis
         max: 400, // Maximum value for y-axis
       }
     },
@@ -75,9 +75,8 @@
         .then((data) => {
           // Update chart labels and data dynamically
           myChart5.data.labels = data.labels;
-          myChart5.data.datasets[0].data = data.rCenterPin3CycleStart;
-          // myChart5.data.datasets[1].data = data.lLowMain1TempCyOn;
-          myChart5.update(); // Refresh chart
+          myChart5.data.datasets[0].data = data.rYuguchiTempCycleStart;
+          myChart5.data.datasets[1].data = data.lYuguchiTempCycleStart
         })
         .catch((error) => console.error("Error fetching data:", error));
     }

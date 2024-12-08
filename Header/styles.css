@@ -55,19 +55,20 @@
   color: #ffffff;
   cursor: pointer;
 }
-.notification{
+.body-wrapper .header .notification{
     font-size: 15px;
-    margin-right: 27rem;
-    margin-top: -0.7rem;
+    margin-right: 16rem;
+    margin-top: -1rem;
 }
 .notifButton{
     background-color: #3086F3;
     border: none;
-    padding: 0.6rem 0.8rem;
+    padding: 0.8rem 0.8rem;
     border-radius: 50%;
     margin-top: 0.4rem;
 }
 .profile{
   color: #000000;
   font-size: 40px;
+  margin-left: 49rem;
 }

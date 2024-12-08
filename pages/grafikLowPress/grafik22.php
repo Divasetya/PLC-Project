@@ -1,23 +1,23 @@
 <?php include "../backend/fetchDataSensor.php"; ?>
 
-<div style="width: 570px; background-color: white; border-radius: 30px; padding: 1rem; margin-top: 1rem"><canvas id="myChart9"></canvas></div>
+<div style="width: 570px; background-color: white; border-radius: 30px; padding: 1rem; margin-top: 1rem"><canvas id="myChart22"></canvas></div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  const ctx9 = document.getElementById("myChart9").getContext("2d");
-  const labels9 = <?php echo json_encode($serialNumbers); ?>;
-  const data9 = {
-    labels: labels9,
+  const ctx22 = document.getElementById("myChart22").getContext("2d");
+  const labels22 = <?php echo json_encode($serialNumbers); ?>;
+  const data22 = {
+    labels: labels22,
     datasets: [
       {
-        label: "R Upper S/P Water Flow",
-        data: <?php echo json_encode($rUpperSPWaterFlow); ?>,
+        label: "R Lower Gate1 Temp <Process>",
+        data: <?php echo json_encode($rLowerGate1TempHldCompTemp); ?>,
         fill: false,
         borderColor: "rgb(255, 99, 132)",
         tension: 0.1,
       },
       {
-        label: "L Upper S/P Water Flow",
-        data: <?php echo json_encode($lUpperSPWaterFlow); ?>,
+        label: "L Lower Gate1 Temp <Process>",
+        data: <?php echo json_encode($lLowerGate1TempHldCompTemp); ?>,
         fill: false,
         borderColor: "rgb(54, 162, 235)",
         tension: 0.1,
@@ -25,16 +25,16 @@
       // Lower limit line
       {
         label: "Lower Limit",
-        data: Array(labels9.length).fill(10), // Replace 400 with your actual lower limit
+        data: Array(labels22.length).fill(470), // Replace 400 with your actual lower limit
         fill: false,
-        borderColor: "black", 
+        borderColor: "black",
         borderDash: [5, 5], // Dashed line
         pointRadius: 0,
       },
       // Upper limit line
       {
         label: "Upper Limit",
-        data: Array(labels9.length).fill(80), // Replace 300 with your actual upper limit
+        data: Array(labels22.length).fill(530), // Replace 300 with your actual upper limit
         fill: false,
         borderColor: "black", 
         borderDash: [5, 5], // Dashed line
@@ -43,12 +43,12 @@
     ],
   };
 
-  const options9 = {
+  const options22 = {
     responsive: true,
     scales: {
       y: {
-        min: 0, // Minimum value for y-axis
-        max: 100, // Maximum value for y-axis
+        min: 450, // Minimum value for y-axis
+        max: 550, // Maximum value for y-axis
       }
     },
     plugins: {
@@ -58,15 +58,15 @@
       },
       title: {
         display: true,
-        text: "Upper S/P Water Flow",
+        text: "Lower Gate 1 <Process>",
       },
     },
   };
 
-  const myChart9 = new Chart(ctx9, {
+  const myChart22 = new Chart(ctx22, {
     type: "line",
-    data: data9,
-    options: options9,
+    data: data22,
+    options: options22,
   });
 
   function fetchData() {
@@ -74,10 +74,10 @@
         .then((response) => response.json())
         .then((data) => {
           // Update chart labels and data dynamically
-          myChart9.data.labels = data.labels;
-          myChart9.data.datasets[0].data = data.rUpperSPWaterFlow;
-          myChart9.data.datasets[1].data = data.lUpperSPWaterFlow;
-          myChart9.update(); // Refresh chart
+          myChart22.data.labels = data.labels;
+          myChart22.data.datasets[0].data = data.rLowerGate1TempHldCompTemp;
+          myChart22.data.datasets[1].data = data.lLowerGate1TempHldCompTemp;
+          myChart22.update(); // Refresh chart
         })
         .catch((error) => console.error("Error fetching data:", error));
     }

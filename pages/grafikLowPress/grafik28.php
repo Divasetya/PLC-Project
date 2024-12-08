@@ -1,31 +1,24 @@
 <?php include "../backend/fetchDataSensor.php"; ?>
 
-<div style="width: 570px; background-color: white; border-radius: 30px; padding: 1rem; margin-top: 1rem"><canvas id="myChart6"></canvas></div>
+<div style="width: 570px; background-color: white; border-radius: 30px; padding: 1rem; margin-top: 1rem"><canvas id="myChart28"></canvas></div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  const ctx6 = document.getElementById("myChart6").getContext("2d");
-  const labels6 = <?php echo json_encode($serialNumbers); ?>;
-  const data6 = {
-    labels: labels6,
+  const ctx28 = document.getElementById("myChart28").getContext("2d");
+  const labels28 = <?php echo json_encode($serialNumbers); ?>;
+  const data28 = {
+    labels: labels28,
     datasets: [
       {
-        label: "Temp Atmosphere <Cycle Start>",
-        data: <?php echo json_encode($tempAtmosphereCycleStart); ?>,
+        label: "PRS C Temp <Process>",
+        data: <?php echo json_encode($prsCTempHldCompTemp); ?>,
         fill: false,
         borderColor: "rgb(255, 99, 132)",
-        tension: 0.1,
-      },
-      {
-        label: "Temp Atmosphere",
-        data: <?php echo json_encode($tempAtmosphere); ?>,
-        fill: false,
-        borderColor: "rgb(54, 162, 235)",
         tension: 0.1,
       },
       // Lower limit line
       {
         label: "Lower Limit",
-        data: Array(labels6.length).fill(10), // Replace 400 with your actual lower limit
+        data: Array(labels28.length).fill(650), // Replace 400 with your actual lower limit
         fill: false,
         borderColor: "black",
         borderDash: [5, 5], // Dashed line
@@ -34,7 +27,7 @@
       // Upper limit line
       {
         label: "Upper Limit",
-        data: Array(labels6.length).fill(40), // Replace 300 with your actual upper limit
+        data: Array(labels28.length).fill(730), // Replace 300 with your actual upper limit
         fill: false,
         borderColor: "black", 
         borderDash: [5, 5], // Dashed line
@@ -43,12 +36,12 @@
     ],
   };
 
-  const options6 = {
+  const options28 = {
     responsive: true,
     scales: {
       y: {
-        min: 0, // Minimum value for y-axis
-        max: 50, // Maximum value for y-axis
+        min: 600, // Minimum value for y-axis
+        max: 750, // Maximum value for y-axis
       }
     },
     plugins: {
@@ -58,15 +51,15 @@
       },
       title: {
         display: true,
-        text: "Atmosphere",
+        text: "PRS.C Temp <Process>",
       },
     },
   };
 
-  const myChart6 = new Chart(ctx6, {
+  const myChart28 = new Chart(ctx28, {
     type: "line",
-    data: data6,
-    options: options6,
+    data: data28,
+    options: options28,
   });
 
   function fetchData() {
@@ -74,10 +67,9 @@
         .then((response) => response.json())
         .then((data) => {
           // Update chart labels and data dynamically
-          myChart6.data.labels = data.labels;
-          myChart6.data.datasets[0].data = data.tempAtmosphereCycleStart;
-          myChart6.data.datasets[1].data = data.tempAtmosphere;
-          myChart6.update(); // Refresh chart
+          myChart28.data.labels = data.labels;
+          myChart28.data.datasets[0].data = data.prsCTempHldCompTemp;
+          myChart28.update(); // Refresh chart
         })
         .catch((error) => console.error("Error fetching data:", error));
     }

@@ -35,7 +35,8 @@ include 'sidebar.php';
   <body class="poppins-regular" style="height: 60rem;">
 
     <!-- konten -->
-    <div class="d-flex justify-content-end align-item-start" style="margin-top: 4rem">
+     <div style="height: 6rem;"></div>
+    <!-- <div class="d-flex justify-content-end align-item-start" style="margin-top: 4rem">
       <div style="padding: 1rem 1rem;">
         <button class="btn dropdown-toggle poppins-semibold" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #0555b3; border-color: black; color: white; border-radius: 7px; border-width: 2px; box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);">Tanggal</button>
         <ul class="dropdown-menu">
@@ -52,7 +53,7 @@ include 'sidebar.php';
           <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>
       </div>
-    </div>
+    </div> -->
     
     <div class="d-flex" style="margin-left: 17rem; padding: 0rem 1rem; margin-top: -1rem">
       <p class="poppins-semibold" style="color: black; font-weight: 600; font-size: 18px; margin-right: 9px">Gedung B LPC 11</p>
@@ -88,6 +89,85 @@ include 'sidebar.php';
         <div class="row">
           <div class="col d-flex justify-content-between">
             <?php include "grafikLowPress/grafik5.php" ?>
+          </div>
+        </div>
+        <!-- grafik berpasangan -->
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik6.php" ?>
+            <?php include "grafikLowPress/grafik7.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik8.php" ?>
+            <?php include "grafikLowPress/grafik9.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik10.php" ?>
+            <?php include "grafikLowPress/grafik11.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik12.php" ?>
+            <?php include "grafikLowPress/grafik13.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik14.php" ?>
+            <?php include "grafikLowPress/grafik15.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik16.php" ?>
+            <?php include "grafikLowPress/grafik17.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik18.php" ?>
+            <?php include "grafikLowPress/grafik19.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik20.php" ?>
+            <?php include "grafikLowPress/grafik21.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik22.php" ?>
+            <?php include "grafikLowPress/grafik23.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik24.php" ?>
+            <?php include "grafikLowPress/grafik25.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik26.php" ?>
+            <?php include "grafikLowPress/grafik27.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik28.php" ?>
+            <?php include "grafikLowPress/grafik29.php" ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <?php include "grafikLowPress/grafik30.php" ?>
+            <?php include "grafikLowPress/grafik31.php" ?>
           </div>
         </div>
       </div>
