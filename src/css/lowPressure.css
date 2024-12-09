@@ -24,9 +24,14 @@
     padding: 12px 20px;
 }
 
-
-
 .styled-table tbody tr:hover {
     background-color: #f1f1f1;
 }
 
+.buttonku .btn-export{
+    background-color: #0f67cf;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 10px;
+    border-color: transparent;
+}

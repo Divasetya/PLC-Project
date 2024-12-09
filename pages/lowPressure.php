@@ -66,11 +66,18 @@ include 'sidebar.php';
         <!-- tabel abnormality -->
         <h5 class="card-title poppins-semibold" style="color: white">Daftar Abnormality</h5>
         <hr style="background-color: white; opacity: 100%; height: 1.5px" />
+        <div class="mt-2 mb-3 buttonku">
+          <button id="exportExcel" onclick="window.location.href='../backend/exportExcel-abnormalities.php'" class="btn-export">Export ke Excel</button>
+        </div>
+
         <?php include "lowPressure_abnormalityTable.php"; ?>
 
-        <!-- production report -->
-        <h5 class="card-title poppins-semibold" style="color: white">Production Report</h5>
+        <!-- PLC report -->
+        <h5 class="card-title poppins-semibold" style="color: white">PLC Report</h5>
         <hr style="background-color: white; opacity: 100%; height: 1.5px" />
+        <div class="mt-2 buttonku">
+          <button id="exportExcel" onclick="window.location.href='../backend/exportExcel-datasensor.php'" class="btn-export">Export ke Excel</button>
+        </div>
         <div class="row">
           <div class="col d-flex justify-content-between">
             <?php include "grafikLowPress/grafik1.php" ?>

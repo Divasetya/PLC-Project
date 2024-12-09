@@ -16,12 +16,12 @@
         tension: 0.1,
       },
       {
-        label: "Cooling Water IN <Process>",
-        data: <?php echo json_encode($coolingWaterInHldCompTemp); ?>,
+        label: "Cooling Air IN <Cycle Start>",
+        data: <?php echo json_encode($coolingAirInCycleStart); ?>,
         fill: false,
         borderColor: "rgb(54, 162, 235)",
         tension: 0.1,
-      },
+      },  
       // Lower limit line
       {
         label: "Lower Limit",
@@ -58,7 +58,7 @@
       },
       title: {
         display: true,
-        text: "Cooling Water In",
+        text: "Cooling Temp <Cycle Start>",
       },
     },
   };
@@ -76,7 +76,7 @@
           // Update chart labels and data dynamically
           myChart21.data.labels = data.labels;
           myChart21.data.datasets[0].data = data.coolingWaterInCycleStart;
-          myChart21.data.datasets[1].data = data.coolingWaterInHldCompTemp;
+          myChart21.data.datasets[1].data = data.coolingAirInCycleStart;
           myChart21.update(); // Refresh chart
         })
         .catch((error) => console.error("Error fetching data:", error));
