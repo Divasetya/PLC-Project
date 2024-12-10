@@ -123,60 +123,60 @@ include 'sidebar.php';
             <?php include "grafikLowPress/grafik13.php" ?>
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col d-flex justify-content-between">
-            <?php include "grafikLowPress/grafik14.php" ?>
-            <?php include "grafikLowPress/grafik15.php" ?>
+             include "grafikLowPress/grafik14.php" ?>
+             include "grafikLowPress/grafik15.php" ?>
           </div>
         </div>
         <div class="row">
           <div class="col d-flex justify-content-between">
-            <?php include "grafikLowPress/grafik16.php" ?>
-            <?php include "grafikLowPress/grafik17.php" ?>
+             include "grafikLowPress/grafik16.php" ?>
+             include "grafikLowPress/grafik17.php" ?>
           </div>
         </div>
         <div class="row">
           <div class="col d-flex justify-content-between">
-            <?php include "grafikLowPress/grafik18.php" ?>
-            <?php include "grafikLowPress/grafik19.php" ?>
+             include "grafikLowPress/grafik18.php" ?>
+             include "grafikLowPress/grafik19.php" ?>
           </div>
         </div>
         <div class="row">
           <div class="col d-flex justify-content-between">
-            <?php include "grafikLowPress/grafik20.php" ?>
-            <?php include "grafikLowPress/grafik21.php" ?>
+             include "grafikLowPress/grafik20.php" ?>
+             include "grafikLowPress/grafik21.php" ?>
           </div>
         </div>
         <div class="row">
           <div class="col d-flex justify-content-between">
-            <?php include "grafikLowPress/grafik22.php" ?>
-            <?php include "grafikLowPress/grafik23.php" ?>
+             include "grafikLowPress/grafik22.php" ?>
+             include "grafikLowPress/grafik23.php" ?>
           </div>
         </div>
         <div class="row">
           <div class="col d-flex justify-content-between">
-            <?php include "grafikLowPress/grafik24.php" ?>
-            <?php include "grafikLowPress/grafik25.php" ?>
+             include "grafikLowPress/grafik24.php" ?>
+             include "grafikLowPress/grafik25.php" ?>
           </div>
         </div>
         <div class="row">
           <div class="col d-flex justify-content-between">
-            <?php include "grafikLowPress/grafik26.php" ?>
-            <?php include "grafikLowPress/grafik27.php" ?>
+             include "grafikLowPress/grafik26.php" ?>
+             include "grafikLowPress/grafik27.php" ?>
           </div>
         </div>
         <div class="row">
           <div class="col d-flex justify-content-between">
-            <?php include "grafikLowPress/grafik28.php" ?>
-            <?php include "grafikLowPress/grafik29.php" ?>
+             include "grafikLowPress/grafik28.php" ?>
+             include "grafikLowPress/grafik29.php" ?>
           </div>
         </div>
         <div class="row">
           <div class="col d-flex justify-content-between">
-            <?php include "grafikLowPress/grafik30.php" ?>
-            <?php include "grafikLowPress/grafik31.php" ?>
+             include "grafikLowPress/grafik30.php" ?>
+             include "grafikLowPress/grafik31.php" ?>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
                                 

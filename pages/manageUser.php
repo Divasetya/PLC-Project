@@ -40,7 +40,7 @@
     <h1 style="margin-top: 7rem; margin-left: 18rem;">Manage User</h1>
     <div class="card Display">
         <div class="card-body">
-            <button href="addUser.php" class="addbutton">Tambah Akun</button>
+            <a href="addUsers.php" class="addbutton">Tambah Akun</a>
             <div class="table-container">
                 <table class="styled-table">
                     <thead>

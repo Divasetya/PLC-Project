@@ -20,7 +20,7 @@
           <div class="profile">
             <div class="row">
               <div class="col-2 d-flex align-items-center">
-                <button style="background-color: transparent; border: none;"><i class="bi bi-person-circle"></i></button>
+                <span style="background-color: transparent; border: none;"><i class="bi bi-person-circle"></i></span>
               </div>
               <div class="col-9" style="font-size: 12px; padding-top: 3px; padding-left: 1.5rem">
                 <span><?php echo htmlspecialchars($_SESSION['fname'] ?? 'Guest'); ?> <?php echo htmlspecialchars($_SESSION['lname'] ?? 'Guest'); ?></span> <br />

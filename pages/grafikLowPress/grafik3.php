@@ -4,29 +4,29 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   const ctx3 = document.getElementById("myChart3").getContext("2d");
-  const labels3 = <?php echo json_encode($serialNumbers); ?>;
+  const labels3 = <?php echo json_encode($SERIAL_No); ?>;
   const data3 = {
     labels: labels3,
     datasets: [
       {
-        label: "Cooling Water In <Cycle Start>",
-        data: <?php echo json_encode($coolingWaterInCycleStart); ?>,
+        label: "R UPPER DIE IN 2",
+        data: <?php echo json_encode($R_UPPER_DIE_IN_2); ?>,
         fill: false,
         borderColor: "rgb(255, 99, 132)",
         tension: 0.1,
       },
       {
-        label: "Cooling Air In <Cycle Start>",
-        data: <?php echo json_encode($coolingAirInCycleStart); ?>,
+        label: "L UPPER DIE IN 2",
+        data: <?php echo json_encode($L_UPPER_DIE_IN_2); ?>,
         fill: false,
-        borderColor: "rgb(54, 162, 235)",
+        borderColor: "rgb(75, 192, 192)",
         tension: 0.1,
       },
-      //sebagai control line (grais hitam putus-putus)
+      // garis control limit
       // Lower limit line
       {
         label: "Lower Limit",
-        data: Array(labels3.length).fill(30), // Replace 400 with your actual lower limit
+        data: Array(labels2.length).fill(270), // Replace 400 with your actual lower limit
         fill: false,
         borderColor: "black",
         borderDash: [5, 5], // Dashed line
@@ -35,7 +35,7 @@
       // Upper limit line
       {
         label: "Upper Limit",
-        data: Array(labels3.length).fill(45), // Replace 300 with your actual upper limit
+        data: Array(labels2.length).fill(320), // Replace 300 with your actual upper limit
         fill: false,
         borderColor: "black", 
         borderDash: [5, 5], // Dashed line
@@ -48,8 +48,8 @@
     responsive: true,
     scales: {
       y: {
-        min: 25, // Minimum value for y-axis
-        max: 50, // Maximum value for y-axis
+        min: 250, // Minimum value for y-axis
+        max: 380, // Maximum value for y-axis
       }
     },
     plugins: {
@@ -59,7 +59,7 @@
       },
       title: {
         display: true,
-        text: "Cooling Temp (°C)",
+        text: "Upper Die Int 2 (°C)",
       },
     },
   };
@@ -76,8 +76,8 @@
         .then((data) => {
           // Update chart labels and data dynamically
           myChart3.data.labels = data.labels;
-          myChart3.data.datasets[0].data = data.coolingWaterInCycleStart;
-          myChart3.data.datasets[1].data = data.coolingAirInCycleStart;
+          myChart3.data.datasets[0].data = data.R_UPPER_DIE_IN_2;
+          myChart3.data.datasets[1].data = data.L_UPPER_DIE_IN_2;
           myChart3.update(); // Refresh chart
         })
         .catch((error) => console.error("Error fetching data:", error));

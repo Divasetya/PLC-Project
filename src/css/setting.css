@@ -1,0 +1,40 @@
+.Display{
+    margin-left: 18rem;
+    margin-top: 7rem;
+}
+
+/* Style untuk form input */
+input[type="text"] {
+    width: 100%; /* Memanjang sesuai lebar kolom */
+    padding: 5px; /* Memberikan ruang dalam */
+    border-radius: 10px; /* Membuat sudut membulat */
+    border: 1px solid #ccc; /* Warna border */
+    outline: none; /* Menghapus outline bawaan browser */
+    font-size: 16px; /* Ukuran font */
+    box-sizing: border-box; /* Memastikan padding tidak memengaruhi lebar */
+    transition: 0.3s ease-in-out; /* Efek transisi */
+}
+
+/* Efek hover */
+input[type="text"]:hover {
+    border-color: #0f67cf; /* Ubah warna border saat hover */
+}
+
+/* Efek fokus */
+input[type="text"]:focus {
+    border-color: #0f67cf; /* Warna border saat fokus */
+    box-shadow: 0 0 5px rgba(15, 103, 207, 0.5); /* Efek glow */
+}
+
+/* Untuk row */
+.row {
+    display: flex;
+    margin-bottom: 1rem; /* Jarak antar baris */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; /* Kolom menjadi baris pada layar kecil */
+    }
+}

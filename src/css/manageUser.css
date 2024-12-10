@@ -1,10 +1,19 @@
-.addbutton{
+.addbutton {
+    display: inline-block; /* Tambahkan ini untuk membuat <a> terlihat seperti tombol */
     border-radius: 10px;
     background-color: rgb(2, 181, 2);
     border-color: transparent;
     padding: 0.5rem 1rem;
     color: white;
+    text-align: center; /* Tambahkan untuk memastikan teks berada di tengah */
+    text-decoration: none; /* Hilangkan garis bawah default pada <a> */
     margin-bottom: 0.5rem;
+}
+
+.addbutton:hover {
+    background-color: rgb(0, 150, 0);
+    color: white;
+    text-decoration: none; /* Pastikan tidak ada garis bawah saat dihover */
 }
 
 .Display{

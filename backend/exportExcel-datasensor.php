@@ -36,7 +36,7 @@ if (!$result) {
 
 // Set header untuk file Excel
 header("Content-Type: application/vnd.ms-excel");
-header("Content-Disposition: attachment; filename=data_export.xls");
+header("Content-Disposition: attachment; filename=data_sensorPLC.xls");
 header("Pragma: no-cache");
 header("Expires: 0");
 

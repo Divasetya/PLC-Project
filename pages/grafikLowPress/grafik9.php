@@ -4,37 +4,35 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   const ctx9 = document.getElementById("myChart9").getContext("2d");
-  const labels9 = <?php echo json_encode($serialNumbers); ?>;
+  const labels9 = <?php echo json_encode($SERIAL_No); ?>;
   const data9 = {
     labels: labels9,
     datasets: [
       {
-        label: "R Upper S/P Water Flow",
-        data: <?php echo json_encode($rUpperSPWaterFlow); ?>,
+        label: "Cycle Time 1",
+        data: <?php echo json_encode($cycleTime1); ?>,
         fill: false,
         borderColor: "rgb(255, 99, 132)",
         tension: 0.1,
       },
       {
-        label: "L Upper S/P Water Flow",
-        data: <?php echo json_encode($lUpperSPWaterFlow); ?>,
+        label: "Cycle Time 2",
+        data: <?php echo json_encode($cycleTime2); ?>,
         fill: false,
         borderColor: "rgb(54, 162, 235)",
         tension: 0.1,
       },
-      // Lower limit line
       {
-        label: "Lower Limit",
-        data: Array(labels9.length).fill(10), // Replace 400 with your actual lower limit
+        label: "Cycle Time 3",
+        data: <?php echo json_encode($cycleTime3); ?>,
         fill: false,
-        borderColor: "black", 
-        borderDash: [5, 5], // Dashed line
-        pointRadius: 0,
+        borderColor: "rgb(75, 192, 192)",
+        tension: 0.1,
       },
-      // Upper limit line
+      //sebagai control line (garis hitam putus-putus)
       {
-        label: "Upper Limit",
-        data: Array(labels9.length).fill(80), // Replace 300 with your actual upper limit
+        label: "Limit",
+        data: Array(labels9.length).fill(310), // Replace 300 with your actual upper limit
         fill: false,
         borderColor: "black", 
         borderDash: [5, 5], // Dashed line
@@ -48,7 +46,7 @@
     scales: {
       y: {
         min: 0, // Minimum value for y-axis
-        max: 100, // Maximum value for y-axis
+        max: 350, // Maximum value for y-axis
       }
     },
     plugins: {
@@ -58,7 +56,7 @@
       },
       title: {
         display: true,
-        text: "Upper S/P Water Flow",
+        text: "Cycle Time (sec)",
       },
     },
   };
@@ -75,8 +73,9 @@
         .then((data) => {
           // Update chart labels and data dynamically
           myChart9.data.labels = data.labels;
-          myChart9.data.datasets[0].data = data.rUpperSPWaterFlow;
-          myChart9.data.datasets[1].data = data.lUpperSPWaterFlow;
+          myChart9.data.datasets[0].data = data.cycleTime1;
+          myChart9.data.datasets[1].data = data.cycleTime2;
+          myChart9.data.datasets[2].data = data.cycleTime3;
           myChart9.update(); // Refresh chart
         })
         .catch((error) => console.error("Error fetching data:", error));

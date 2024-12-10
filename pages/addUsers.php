@@ -1,14 +1,14 @@
 <?php 
-session_start(); // Memulai session
+    session_start(); // Memulai session
 
-// Periksa apakah pengguna sudah login
-if (!isset($_SESSION['npk'])) {
-  // Redirect ke halaman ../index.php dengan pesan error
-  header("Location: ../index.php?error=Silakan login terlebih dahulu.");
-  exit();
-}
+    // Periksa apakah pengguna sudah login
+    if (!isset($_SESSION['npk'])) {
+        // Redirect ke halaman ../index.php dengan pesan error
+        header("Location: ../index.php?error=Silakan login terlebih dahulu.");
+        exit();
+    }
 
-include 'sidebar.php';
+    include 'sidebar.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,67 +20,21 @@ include 'sidebar.php';
     <link rel="stylesheet" href="../src/css/styles.min.css" />
     <link rel="stylesheet" href="../src/css/dashboard.css" />
     <link rel="stylesheet" href="../Header/styles.css" />
-    <link rel="stylesheet" href="../src/css/setting.css" />
+    <link rel="stylesheet" href="../src/css/addUsers.css" />
     <!-- bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <!-- iconify -->
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
-    </head>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../backend/manageUser.js"></script>
+  </head>
 
   <body class="poppins-regular" style="height: 60rem;">
-    <div class="card" style="width: 98%">
-        <div class="Display">
-            <div class="row">
-                <div class="col">
-                    <div class="row">
-                        <div class="card">
-                            <div class="card-body">
-                                <form action="">
-                                    <span><i style="font-size: 10rem; margin-left: 43%" class="bi bi-person-circle"></i></span>
-                                </form>
-                                <h5 class="card-title">Profile</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Password</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Ubah Profile</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-
-
-
-
-
-
-            <div class="card" style="width: 18rem;">
-                
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            
+    <h1 style="margin-top: 7rem; margin-left: 18rem;">Tambah Akun</h1>
+    <div class="card Display">
+        <div class="card-body">
             <form method="POST" action="../backend/addUsers.php">
                 <div class="row">
                     <div class="col-6">
@@ -129,11 +83,15 @@ include 'sidebar.php';
                         <input type="text" id="alamat" name="alamat">
                     </div>
                 </div>
+                <div class="row">
+
+                </div>
+                <button type="submit" class="addbutton">Buat Akun</button>
             </form>
         </div>
-    </div>  
-                            
-    <!-- bootstrap -->
+    </div>
+      
+    <script src="../backend/manageUser_delete.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

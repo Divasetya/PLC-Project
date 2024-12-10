@@ -6,20 +6,20 @@
   <script src="https://cdn.jsdelivr.net/npm/@simondmc/popup-js@1.4.2/popup.min.js"></script>
   <script>
     const ctx = document.getElementById("myChart").getContext("2d");
-    const labels = <?php echo json_encode($serialNumbers); ?>;
+    const labels = <?php echo json_encode($SERIAL_No); ?>;
     const data = {
       labels: labels,
       datasets: [
         {
-          label: "R Upper Water Flow",
-          data: <?php echo json_encode($rUpperWaterFlow); ?>,
+          label: "R Upper Water MB",
+          data: <?php echo json_encode($R_Upper_Water_MB); ?>,
           fill: false,
-          borderColor: "rgb(100, 50, 200)",
+          borderColor: "rgb(255, 99, 132)",
           tension: 0.1,
         },
         {
-          label: "L Upper Water Flow",
-          data: <?php echo json_encode($lUpperWaterFlow); ?>,
+          label: "L Upper Water MB",
+          data: <?php echo json_encode($L_Upper_Water_MB); ?>,
           fill: false,
           borderColor: "rgb(75, 192, 192)",
           tension: 0.1,
@@ -50,8 +50,8 @@
       responsive: true,
       scales: {
         y: {
-          min: 0, // Minimum value for y-axis
-          max: 80, // Maximum value for y-axis
+          min: 35, // Minimum value for y-axis
+          max: 65, // Maximum value for y-axis
         }
       },
       plugins: {
@@ -78,8 +78,8 @@
         .then((data) => {
           // Update chart labels and data dynamically
           myChart.data.labels = data.labels;
-          myChart.data.datasets[0].data = data.rUpperWaterFlow;
-          myChart.data.datasets[1].data = data.lUpperWaterFlow;
+          myChart.data.datasets[0].data = data.R_Upper_Water_MB;
+          myChart.data.datasets[1].data = data.L_Upper_Water_MB;
           myChart.update(); // Refresh chart
         })
         .catch((error) => console.error("Error fetching data:", error));
